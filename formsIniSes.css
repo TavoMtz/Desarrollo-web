@@ -9,7 +9,7 @@ body {
     flex-direction: column;
 }
 
-.header{
+.header {
     display: flex;
     color: white;
     justify-content: space-around;
@@ -18,18 +18,17 @@ body {
     width: 100%;
 }
 
-.botonSalir{
+.botonSalir {
     width: 150px;  /* Ajusta el ancho */
     height: 40px;   /* Ajusta la altura */
 }
 
-.headerButton{
+.headerButton {
     color: white;
     text-decoration: none;
-   
 }
 
-.buttonText{
+.buttonText {
     color: white;
     border: 1px solid white;
     border-radius: 6px;
@@ -37,28 +36,28 @@ body {
     text-decoration: none;
 }
 
-.mainPage{
+.mainPage {
     display: flex;
-    background-image:url(Imgs/FotoBackgroundInicioSecion.jpg);
+    background-image: url(Imgs/FotoBackgroundInicioSecion.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100vw; /* Ocupa el 100% del ancho de la ventana, viewport width o ancho del área*/
-    height: 100vh; /* Ocupa el 100% de la altura de la ventana, viewport height o altura del área de visualización*/
-    align-items: center; 
-    justify-content: center; 
+    width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    align-items: center;
+    justify-content: center;
 }
 
-.logo{
+.logo {
     display: flex;
     width: 200px;
     height: auto;
     max-width: 250px;
 }
 
-.containerForms{
+.containerForms {
     display: flex;
-    background-color:#BF7D3B;
+    background-color: #BF7D3B;
     width: 40vw;
     height: 60vh;
     max-width: 300px;
@@ -69,7 +68,7 @@ body {
     justify-content: center; /* Centra el contenido verticalmente */
 }
 
-.logoPersona{
+.logoPersona {
     display: flex;
     width: 80px;
     height: auto;
@@ -77,34 +76,35 @@ body {
     padding-top: 5%;
 }
 
-.txt1{
+.txt1 {
     color: white;
     text-decoration: none;
 }
 
-.input{
+.input {
     border-radius: 8px;
     color: white;
     border: 1px solid #88422A;
-    background-color:#88422A;
+    background-color: #88422A;
     padding: 5px;
 }
-.input::placeholder{
+
+.input::placeholder {
     display: flex;
     text-align: center;
     color: rgba(255, 255, 255, 0.507);
 }
 
-.BotonIniSesion{
+.BotonIniSesion {
     border: 1px solid #FFD9B4;
     color: #6A3500;
     padding: 6px;
     border-radius: 8px;
-    background-color:#FFD9B4 ;
+    background-color: #FFD9B4;
     text-decoration: none;
 }
-.BotonIniSesion:hover{
+
+.BotonIniSesion:hover {
     background-color: #BF7D3B;
     color: white;
 }
-/*----*/
