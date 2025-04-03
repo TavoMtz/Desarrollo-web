@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaffeecito - Menú</title>
+    <link rel="stylesheet" href="formsIniSes.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Kaffeecito</h1>
+        <a class="headerButton" href="menu.html">Menú</a>
+        |
+        <a class="headerButton" href="formsInicioSesion.html">Acerca de Nosotros</a>
+        |
+        <a class="headerButton" href="formsInicioSesion.html">Promos de Temporada</a>
+        |
+        <a class="headerButton" href="pedidos.html">Pedidos</a>
+    </header> 
+    <main class="mainPage">
+        <div class="form-section">
+            <div class="form-container">
+                <h2 class="form-title">Editar producto</h2>
+                <form id="editForm" action="producto_editado.html" method="get" class="edit-form">
+                    <div class="form-group">
+                        <label for="categoria">Categoría</label>
+                        <select id="categoria" class="input">
+                            <option value="bebidas">Bebidas</option>
+                            <option value="alimentos">Alimentos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreProducto">Nombre del producto</label>
+                        <input id="nombreProducto" class="input" type="text" placeholder="Nombre del producto">
+                    </div>
+                    <div class="form-group">
+                        <label for="idProducto">ID del producto</label>
+                        <input id="idProducto" class="input" type="text" placeholder="ID del producto" maxlength="4" pattern="\d{4}">
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Precio</label>
+                        <input id="precio" class="input" type="number" step="0.01" placeholder="Precio">
+                    </div>
+                    <button id="guardar" class="guardar" type="submit">Guardar</button>
+                    <button type="button" class="cancelar" onclick="confirmCancel()">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="formsInicioSesion.js"></script>
+    <script>
+        document.getElementById('editForm').addEventListener('submit', function(event) {
+            var nombreProducto = document.getElementById('nombreProducto').value;
+            var idProducto = document.getElementById('idProducto').value;
+            var precio = document.getElementById('precio').value;
+
+            if (nombreProducto === '' || idProducto === '' || precio === '' || !/^\d{4}$/.test(idProducto)) {
+                alert('Por favor, complete todos los campos correctamente.');
+                event.preventDefault();
+            } else {
+                event.preventDefault();
+                confirmSave();
+            }
+        });
+
+        function confirmCancel() {
+            if (confirm("Estás seguro que deseas cancelar la edición?")) {
+                location.href = 'menu.html';
+            }
+        }
+
+        function confirmSave() {
+            if (confirm("Confirmar cambios realizados?")) {
+                document.getElementById('editForm').submit();
+            }
+        }
+    </script>
+</body>
+</html>

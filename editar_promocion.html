@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaffeecito - Editar Promoción</title>
+    <link rel="stylesheet" href="formsIniSes.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Kaffeecito</h1>
+        <a class="headerButton" href="Menu_admin.html">Menú</a>
+        |
+        <a class="headerButton" href="formsInicioSesion.html">Acerca de Nosotros</a>
+        |
+        <a class="headerButton" href="formsInicioSesion.html">Promos de Temporada</a>
+        |
+        <a class="headerButton" href="pedidos.html">Pedidos</a>
+    </header> 
+    <main class="mainPage">
+        <div class="form-section">
+            <div class="form-container">
+                <h2 class="form-title">Editar promoción</h2>
+                <form id="editPromoForm" action="promocion_editada.html" method="get" class="edit-form">
+                    <div class="form-group">
+                        <label for="nombrePromocion">Nombre de la promoción</label>
+                        <input id="nombrePromocion" class="input" type="text" placeholder="Nombre de la promoción">
+                    </div>
+                    <div class="form-group">
+                        <label for="idProducto1">ID del producto 1</label>
+                        <select id="idProducto1" class="input">
+                            <option value="default">ID del producto</option>
+                            <option value="1111">1111</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="idProducto2">ID del producto 2</label>
+                        <select id="idProducto2" class="input">
+                            <option value="default">ID del producto</option>
+                            <option value="1111">1111</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="idProducto3">ID del producto 3</label>
+                        <select id="idProducto3" class="input">
+                            <option value="default">ID del producto</option>
+                            <option value="1111">1111</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="idProducto4">ID del producto 4</label>
+                        <select id="idProducto4" class="input">
+                            <option value="default">ID del producto</option>
+                            <option value="1111">1111</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="precio">Precio</label>
+                        <input id="precio" class="input" type="number" step="0.01" placeholder="Precio">
+                    </div>
+                    <button id="guardar" class="guardar" type="submit">Guardar</button>
+                    <button type="button" class="cancelar" onclick="confirmCancel()">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="formsInicioSesion.js"></script>
+    <script>
+        document.getElementById('editPromoForm').addEventListener('submit', function(event) {
+            var nombrePromocion = document.getElementById('nombrePromocion').value;
+            var idProducto1 = document.getElementById('idProducto1').value;
+            var idProducto2 = document.getElementById('idProducto2').value;
+            var idProducto3 = document.getElementById('idProducto3').value;
+            var idProducto4 = document.getElementById('idProducto4').value;
+            var precio = document.getElementById('precio').value;
+
+            if (nombrePromocion === '' || idProducto1 === 'default' || idProducto2 === 'default' || precio === '') {
+                alert('Por favor, complete todos los campos correctamente.');
+                event.preventDefault();
+            } else {
+                event.preventDefault();
+                confirmSave();
+            }
+        });
+
+        function confirmCancel() {
+            if (confirm("Estás seguro que deseas cancelar la edición?")) {
+                location.href = 'menu.html';
+            }
+        }
+
+        function confirmSave() {
+            if (confirm("Confirmar cambios realizados?")) {
+                document.getElementById('editPromoForm').submit();
+            }
+        }
+    </script>
+</body>
+</html>
