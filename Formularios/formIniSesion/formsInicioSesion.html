@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesion</title>
+    <link rel="stylesheet" href="formsIniSes.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="Imgs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Imgs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Imgs/favicon-16x16.png">
+    <link rel="manifest" href="Imgs/site.webmanifest">
+</head>
+    
+<body>
+    <header class="header">
+        <h1>Kaffeecito</h1>
+        <a class="headerButton" href="">Menú</a> <!--Lleva a menu-->
+        |
+        <a class="headerButton" href="">Acerca de Nosotros</a> <!--Lleva a nosotros-->
+        |
+        <a class="headerButton" href="">Promos de Temporada</a><!--Lleva a promos-->
+        |
+        <a href=""> <img class="botonSalir" src="Imgs/botonSalir.png"></a>
+    </header>
+    
+    <main class="mainPage">
+        <form action="validarDatos.php" method="POST" class="containerForms">
+            <img class="logoPersona" src="Imgs/logoPersona3.png" alt="">
+            <a class="txt1" href="/formRegistro/formsRegistro.html">¿Aun no eres miembro? <u>Registrate</u></a> <br>
+            <input id="nombre" name="nombre" class="input" type="text" placeholder="Nombre"> <br>
+            <input id="contraseña" name="contraseña" class="input" type="password" placeholder="Contraseña"><br>
+            <button id="BotonIniSesion" class="BotonIniSesion" type="submit">Iniciar Sesión</button> <br>
+            <a class="txt1" href="/RecuperarContraseña/recuperarContraseña.html"> <u>Olvide mi contraseña</u> </a>
+        </form>
+    </main>
+    <script src="formsInicioSesion.js"></script>
+</body>
+</html>
+<!-- -->
